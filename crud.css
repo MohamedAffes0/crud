@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Fustat:wght@600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Fustat", sans-serif;
+}
+body{
+    background-color: rgb(42, 42, 42);
+    /* width: auto; */
+}
+
+.crud{
+    width: 80%;
+    /* height: 100vh;  */
+    margin: 0 auto;
+    min-width: 500px;
+    max-width: 700px;
+    padding: 0 30px;
+}
+header{
+    color: aliceblue;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 16px;
+}
+input{
+    width: 98%;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: rgb(34, 28, 27);
+    margin: 5px 0;
+    border-radius: 5px;
+    padding: 0 5px;
+    color: aliceblue;
+    letter-spacing: 1px;
+    transition: border 1s;
+}
+.prices{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    /* flex-wrap: wrap; */
+}
+.prices input{
+    flex-shrink: 1;
+}
+input:hover , input:focus{
+    background-color: rgb(51, 45, 44);
+    transform: scaleX(1.02);
+    cursor: pointer;
+}
+.prices p{
+    flex-shrink: 0;
+    flex-basis: 90px;
+    height: 20px;
+    background-color: rgb(139, 58, 58);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 10px;
+    color: aliceblue;
+}
+button{
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: rgb(186, 93, 21);
+    border-radius: 15px;
+    color:aliceblue;
+    margin-top: 10px;
+}
+button:hover{
+    cursor: pointer;
+    background-color: rgba(186, 92, 21, 0.842);
+}
+button:active{
+    background-color: rgba(188, 112, 53, 0.842);
+}
+.inputs{
+    margin-bottom: 10px;
+}
+.search-button{
+    display: flex;
+    justify-content: space-between;
+}
+.search-button button{
+    width: 40%;
+}
+.search{
+    margin-bottom: 20px;
+}
+table{
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    color: aliceblue;
+}
+/* @media(max-width:400px){
+    table{
+        font-size: 10px;
+    }
+} */
+td{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    padding-bottom: 20px;
+}
+th{
+    padding-bottom: 20px;
+}
+#update , #delete{
+    background-color: rgb(150, 202, 59);
+    height: 30px;
+    width: 70px;
+    padding-top: 7px;
+    border-radius: 10px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+#delete{
+    background-color: rgb(248, 70, 57);
+}
+#delete:hover{
+    background-color: rgb(114, 38, 38);
+}
+#update:hover {
+    background-color: rgb(86, 114, 38);
+}
+table{
+    margin-top: 20px;
+}
+.hidden{
+    display: none;
+}
+span{
+    font-size: 10px;
+    color: rgb(255, 105, 105);
+}
+.upd{
+    background-color: rgb(150, 202, 59);
+}
+.upd:hover{
+    background-color: rgb(86, 114, 38);
+}
+svg{
+    width: 20px;
+    cursor: pointer;
+}
+#display_mode{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+#checkbox {
+    display: none;
+}
+#display_icon{
+    height: 19px;
+    transition: all 0.75s 0.25s;
+    transform: rotate(0);
+}
+#checkbox:checked + #display_icon {
+    transform: rotate(360deg);
+}
+.light{
+    background-color: aliceblue;
+    h1,p{
+        color: black;
+    }
+    input{
+        background-color: rgb(236, 229, 219);
+        color: black;
+    }
+    table{
+        color: black;
+    }
+    #delete{
+        background-color: rgb(238, 124, 116);
+    }
+    #delete:hover{
+        background-color: rgb(205, 78, 78);
+    }
+    #update{
+        background-color: rgb(189, 220, 137);
+    }
+    #update:hover {
+        background-color: rgb(133, 171, 68);
+    }
+}

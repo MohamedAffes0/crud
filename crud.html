@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GRUD SYSTEM</title>
+        <link rel="icon" href="img5.png">
+        <link rel="stylesheet" href="crud.css">
+    </head>
+    <body class="">
+        <div class="crud">
+            <header>
+                <h1>CRUD SYSTEM</h1>
+                <div id="display_mode">
+                    <p>Light/Dark Mode: </p>
+                    <label for="checkbox">
+                        <input type="checkbox" id="checkbox">
+                        <div id='display_icon' onclick="l_d_mode()"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_429_11017)"> <path d="M20.9955 11.7115L22.2448 11.6721C22.2326 11.2847 22.0414 10.9249 21.7272 10.698C21.413 10.4711 21.0113 10.4029 20.6397 10.5132L20.9955 11.7115ZM12.2885 3.00454L13.4868 3.36028C13.5971 2.98873 13.5289 2.58703 13.302 2.2728C13.0751 1.95857 12.7153 1.76736 12.3279 1.75516L12.2885 3.00454ZM20.6397 10.5132C20.1216 10.667 19.5716 10.75 19 10.75V13.25C19.815 13.25 20.6046 13.1314 21.3512 12.9098L20.6397 10.5132ZM19 10.75C15.8244 10.75 13.25 8.17564 13.25 5H10.75C10.75 9.55635 14.4437 13.25 19 13.25V10.75ZM13.25 5C13.25 4.42841 13.333 3.87841 13.4868 3.36028L11.0902 2.64879C10.8686 3.39542 10.75 4.18496 10.75 5H13.25ZM12 4.25C12.0834 4.25 12.1665 4.25131 12.2492 4.25392L12.3279 1.75516C12.219 1.75173 12.1097 1.75 12 1.75V4.25ZM4.25 12C4.25 7.71979 7.71979 4.25 12 4.25V1.75C6.33908 1.75 1.75 6.33908 1.75 12H4.25ZM12 19.75C7.71979 19.75 4.25 16.2802 4.25 12H1.75C1.75 17.6609 6.33908 22.25 12 22.25V19.75ZM19.75 12C19.75 16.2802 16.2802 19.75 12 19.75V22.25C17.6609 22.25 22.25 17.6609 22.25 12H19.75ZM19.7461 11.7508C19.7487 11.8335 19.75 11.9166 19.75 12H22.25C22.25 11.8903 22.2483 11.781 22.2448 11.6721L19.7461 11.7508Z" fill="#ffffff"></path> </g> <defs> <clipPath id="clip0_429_11017"> <rect width="24" height="24" fill="white"></rect> </clipPath> </defs> </g></svg></div>
+                    </label>
+                </div>
+            </header>
+            <div class="inputs">
+                <input onkeyup="no_border(this.id,'sp1')" type="text" id="title" placeholder="Title">
+                <span class="hidden" id="sp1">fill out this field</span>
+                <div class="prices">
+                    <input onkeyup="calcTotal();no_border(this.id,'sp2')" onchange="no_border(this.id,'sp2');calcTotal()" id="price" type="number" min="0" placeholder="Price" required>
+                    <input onchange="calcTotal()" onkeyup="calcTotal()" id="tax" type="number" min="0" placeholder="Taxes" >
+                    <input onchange="calcTotal()" onkeyup="calcTotal()" id="ads" type="number" min="0" placeholder="Ads" >
+                    <input onchange="calcTotal()" onkeyup="calcTotal()" id="discount" type="number" min="0" placeholder="Discount">
+                    <p id="total">Total:</p>
+                </div>
+                <span class="hidden" id="sp2">fill out this field</span>
+                <input onkeyup="no_border(this.id,'sp3')" id="category" type="text" placeholder="Category">
+                <span class="hidden" id="sp3">fill out this field</span>
+                <input id="count" type="number" placeholder="Count" min="0">
+                <button onclick="create()" id="create-item">Create</button>
+            </div>
+            <div class="search">
+                <input onkeyup="chercher()" type="text" id="search" placeholder="Search">
+                <div class="search-button">
+                    <button onclick="cherche_mode(this.id)" id="s-title">Search By Title</button>
+                    <button onclick="cherche_mode(this.id)" id="s-categ">Search By Category</button>
+                </div>
+            </div>
+            <button onclick="del_all()" id="delete_all"></button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Taxes</th>
+                        <th>Ads</th>
+                        <th>Discount</th>
+                        <th>Total</th>
+                        <th>Category</th>
+                        <th>Count</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="items">
+                </tbody>
+            </table>
+        </div>
+        <script src="crud.js"></script>
+    </body>
+</html>
